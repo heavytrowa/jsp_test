@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+      <form name="form1" method="post" action="hw.jsp" onsubmit="return checkform();">
+        姓名:<br>
+        <input type="text" size="20" name="username" placeholder="name" required><br>
+        生日:<br>
+        <input type="text" size="20" name="bday" placeholder="birthday" required><br>
+        <input type="radio" name="sex" value="male" checked>男
+        <input type="radio" name="sex" value="female">女<br>
+        <input type="checkbox" name="hobby" value="swimming">游泳
+        <input type="checkbox" name="hobby" value="basketball">籃球
+        <input type="checkbox" name="hobby" value="baseball">棒球<br>
+        打什麼位置(籃球)<select name="list" size='1'>
+        　<option value="pg" selected>控球後衛</option>
+        　<option value="sg">得分後衛</option>
+        　<option value="sf">小前鋒</option>
+        　<option value="pf">大前鋒</option>
+          <option value="c">中鋒</option>
+          <option value="no">不會打</option>
+      </select><br>
+      游泳最擅長<select name="list1" size='2' multiple="multiple">
+      　<option value="1" >自由式</option>
+      　<option value="2">蛙式</option>
+      　<option value="3">蝶式</option>
+      </select>
+      <br>
+        自傳<br><textarea name="note" cols="50" rows="10" required></textarea>
+        <input type="submit" value="送出">
+      </form>
+
+      <style>
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      </style>
+
+      <script>
+      function checkform(){
+      var f = document.form1;
+	    for (var i=0;i<f.elements.length;i++) {
+	        var e = f.elements[i];
+	        if (e.type == "checkbox" && e.checked)
+	            return true;
+	    }
+	    alert("至少選一項興趣");
+	    return false;
+    }
+      </script>
+  </body>
+  </html>
